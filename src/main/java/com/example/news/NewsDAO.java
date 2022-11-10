@@ -34,8 +34,8 @@ public class NewsDAO {
 		String sql = "select aid, title, regdate as cdate from news";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		ResultSet rs = pstmt.executeQuery();
-		
-		try(conn; pstmt; rs) {
+		//try~with~resources
+		try (conn;pstmt;rs;){
 			while(rs.next()) {
 				News n = new News();
 				n.setAid(rs.getInt("aid"));
@@ -59,7 +59,7 @@ public class NewsDAO {
 		ResultSet rs = pstmt.executeQuery();
 		
 		rs.next();
-		
+	    
 		try(conn; pstmt; rs) {
 			n.setAid(rs.getInt("aid"));
 			n.setTitle(rs.getString("title"));

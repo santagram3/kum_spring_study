@@ -29,6 +29,8 @@ public class NewsController extends HttpServlet {
 	// 이거 임포트 안되서 앞에 붙어버림
 	private final org.slf4j.Logger logger = LoggerFactory.getLogger(this.getClass());
 
+	//application.properties 에서 news.imgdir 를 가져오려면 
+	// @Value 어노테이션으로 가져온다 
 	@Value("${news.imgdir}")
 	String fdir;
 	
