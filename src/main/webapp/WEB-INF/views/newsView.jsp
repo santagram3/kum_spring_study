@@ -12,7 +12,9 @@
 </head>
    <body>
    <div class="container w-75 mt-5 mx-auto">
-    <h2>${news.title}</h2>
+    <h2>뉴스 번호 : ${news.aid}</h2>
+    <h2>뉴스 제목 : ${news.title}</h2>
+
     <hr>
     <div class="card w-75 mx-auto">
 	    <img class="card-img-top" src="${news.img}"> 
@@ -23,6 +25,7 @@
     </div>
     <hr>
     <a href="javascript:history.back()" class="btn btn-primary"><< Back</a>
+    <a href="/news/modify/${news.aid}" class="btn btn-primary"><< 수정하기</a>
     
     </div>
     </body>

@@ -1,16 +1,11 @@
 package com.example.news;
 
-/**
- * @author dinfree
- *
- */
 public class News {
 	private int aid;
 	private String title;
 	private String img;
 	private String regDate;
 	private String content;
-	
 	public int getAid() {
 		return aid;
 	}
@@ -29,7 +24,6 @@ public class News {
 	public void setImg(String img) {
 		this.img = img;
 	}
-
 	public String getRegDate() {
 		return regDate;
 	}
@@ -42,4 +36,6 @@ public class News {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
+	
 }
