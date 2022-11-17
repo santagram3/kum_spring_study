@@ -43,21 +43,26 @@ public class NewsController extends HttpServlet {
 		// 애초에 디비에서 사진은 무조건 넣어야 되기 때문에 꼭 넣어줘야 한다 
 		System.out.println("Controller - add");
 		
-		System.out.println(news.getTitle());
-		System.out.println(news.getImg());
-		System.out.println(news.getContent());
+		System.out.println("news.getTitle() : "+news.getTitle());
+		System.out.println("news.getImg() : "+news.getImg());
+		System.out.println("news.getContent() :"+news.getContent());
+		System.out.println("file = " + file);
 		
 		try {
-			
 			// 저장 파일 객체 생성 
 			File dest = new File(fdir + "/"+file.getOriginalFilename());
 			System.out.println("dest : " + dest);
+		
 			// 파일 저장 // 내가 지정한 곳에 저장 
 			file.transferTo(dest);
+			System.out.println("=========1");
 			// 뉴스 이미지 경로 변경 
-			news.setImg("/img/"+dest.getName()); // 이게 정답 .. 
+		
+			news.setImg("/img/"+dest.getName()); // 이게 정답 ..
+			System.out.println("=========2");
 			//다오에서 .addNews메서드에 news를 넣어줌  
 			dao.addNews(news);
+			System.out.println("=========3");
 		
 		} catch (Exception e) {
 			e.printStackTrace();
